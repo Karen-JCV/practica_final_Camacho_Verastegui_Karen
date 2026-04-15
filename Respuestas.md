@@ -72,13 +72,13 @@ Las variables identificadoras (`transaction_id` y `user_id`) fueron eliminadas p
 >  
 > - MAE: 42.28  
 > - RMSE: 48.68  
-> - R²: -0.00078  
+> - R²: -0.000804 
 >  
 > El MAE indica que, en promedio, el modelo comete un error de aproximadamente 42 aperturas de aplicaciones al día, lo cual es elevado si se compara con la media de la variable objetivo (≈98).  
 >  
 > El RMSE es aún mayor, lo que sugiere la existencia de errores de predicción significativos en algunos casos, penalizados por el término cuadrático..  
 >  
-> El coeficiente R² es negativo (-0.00078), lo que implica que el modelo es peor que una predicción basada en la media. Es decir, la regresión lineal no logra explicar la variabilidad de la variable objetivo.  
+> El coeficiente R² es negativo (-0.000804), lo que implica que el modelo es peor que una predicción basada en la media. Es decir, la regresión lineal no logra explicar la variabilidad de la variable objetivo.  
 >
 > Estos resultados son coherentes con el análisis del Ejercicio 1, donde se observó que las correlaciones lineales con la variable objetivo eran prácticamente nulas (|r| < 0.03).
 >  

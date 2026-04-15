@@ -89,7 +89,7 @@ El comportamiento del uso del smartphone es **complejo y no lineal**, lo que ant
 |--------|------|
 | MAE    | 42.28 |
 | RMSE   | 48.68 |
-| R²     | -0.00078 |
+| R²     | -0.000804 |
 
 ### 📉 Interpretación
 
