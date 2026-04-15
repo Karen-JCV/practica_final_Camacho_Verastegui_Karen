@@ -1,0 +1,16 @@
+=== ANÁLISIS DEL RESIDUO ===
+
+Media: 0.1271
+Desviación típica: 3.2220
+Asimetría: -0.0509
+Curtosis: -0.0610
+
+=== Test de Normalidad (Jarque-Bera) ===
+Estadístico: 1.1013
+p-valor: 0.5766
+Normal
+
+=== Test ADF (Estacionariedad) ===
+Estadístico: -39.9160
+p-valor: 0.0000
+Estacionario

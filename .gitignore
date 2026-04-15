@@ -1,0 +1,17 @@
+# Python basura
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Entornos virtuales
+.env
+.env.local
+.venv
+venv/
+
+# Archivos temporales
+*.tmp
+*.swp
