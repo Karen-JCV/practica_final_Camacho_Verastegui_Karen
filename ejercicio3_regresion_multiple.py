@@ -5,7 +5,6 @@ import os
 # Crear carpeta de salida si no existe
 os.makedirs("output", exist_ok=True)
 
-
 # =============================================================================
 # FUNCIÓN PRINCIPAL
 # =============================================================================
@@ -61,7 +60,6 @@ def regresion_lineal_multiple(X_train, y_train, X_test):
     y_pred = X_test_b @ coefs
 
     return coefs, y_pred
-
 
 # =============================================================================
 # FUNCIONES DE MÉTRICAS
@@ -133,7 +131,6 @@ def calcular_r2(y_real, y_pred):
 
     return 1 - (ss_res / ss_tot)
 
-
 # =============================================================================
 # FUNCIÓN DE VISUALIZACIÓN
 # =============================================================================
@@ -175,7 +172,6 @@ def graficar_real_vs_predicho(y_real, y_pred, ruta_salida="output/ej3_prediccion
     # Guardar gráfico
     plt.savefig(ruta_salida, dpi=150, bbox_inches='tight')
     plt.close()
-
 
 # =============================================================================
 # MAIN

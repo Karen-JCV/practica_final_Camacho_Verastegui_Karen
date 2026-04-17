@@ -60,9 +60,11 @@ En conjunto, el dataset presenta una estructura adecuada para el modelado, aunqu
 ## Ejercicio 2 — Inferencia con Scikit-Learn
 
 ---
-Se entrenó un modelo de regresión lineal para predecir la variable objetivo `app_opens_per_day`, aplicando previamente un proceso de limpieza, codificación de variables categóricas mediante One-Hot Encoding y escalado de variables numéricas con `StandardScaler`.
+El objetivo de este ejercicio es entrenar un modelo de regresión lineal para predecir la variable `app_opens_per_day` a partir de las variables disponibles en el dataset. Para ello, se realizó un preprocesamiento que incluyó la eliminación de variables identificadoras (`transaction_id` y `user_id`), la codificación de variables categóricas mediante One-Hot Encoding y el escalado de las variables numéricas utilizando `StandardScaler`. Posteriormente, los datos se dividieron en conjuntos de entrenamiento (80%) y test (20%) para evaluar el rendimiento del modelo.
 
-Las variables identificadoras (`transaction_id` y `user_id`) fueron eliminadas por no aportar valor predictivo. El dataset fue dividido en entrenamiento (80%) y test (20%) utilizando `train_test_split` con `random_state=42` para garantizar la reproducibilidad de los resultados.
+Desde el punto de vista analítico, los resultados obtenidos muestran que la regresión lineal no es capaz de capturar la relación entre las variables predictoras y la variable objetivo. Esto se refleja en un valor de R² negativo (-0.000804), lo que indica que el modelo tiene peor desempeño que una predicción basada en la media. Este comportamiento es coherente con el análisis exploratorio del Ejercicio 1, donde se observó que las correlaciones lineales entre las variables eran prácticamente nulas. Además, el elevado valor de MAE (42.28) y RMSE (48.68) confirma que los errores de predicción son significativos.
+
+Como mejora, sería recomendable aplicar transformaciones sobre las variables para intentar capturar relaciones no lineales, como transformaciones logarítmicas o polinómicas. También podría ser útil generar nuevas variables (feature engineering), por ejemplo combinaciones entre tiempos de uso o ratios entre variables. Otra alternativa sería utilizar modelos no lineales (aún no vistos en clase) que son capaces de capturar interacciones complejas sin necesidad de suponer una relación lineal entre variables.
 
 ---
 
@@ -92,7 +94,11 @@ Las variables identificadoras (`transaction_id` y `user_id`) fueron eliminadas p
 ---
 En este ejercicio se ha implementado un modelo de regresión lineal múltiple desde cero utilizando NumPy. A través de la formulación matricial de los Mínimos Cuadrados Ordinarios (OLS), se han estimado los coeficientes del modelo y se ha evaluado su rendimiento sobre un conjunto de datos sintético.
 
-Los resultados obtenidos muestran que el modelo es capaz de aproximar correctamente los coeficientes reales y mantener errores dentro de los rangos esperados, lo que valida la implementación realizada.
+Los coeficientes ajustados obtenidos son muy cercanos a los valores reales de referencia, con pequeñas desviaciones atribuibles al ruido gaussiano introducido en los datos. Esta proximidad confirma que la implementación de la solución analítica de OLS es correcta y capaz de recuperar la estructura subyacente del modelo generador.
+
+En cuanto a las métricas de evaluación, el modelo presenta un MAE de aproximadamente 1.17 y un RMSE de 1.46, lo que indica errores bajos en términos absolutos. El coeficiente de determinación (R² ≈ 0.69) muestra que el modelo es capaz de explicar alrededor del 69% de la variabilidad de la variable objetivo, un resultado consistente teniendo en cuenta la presencia de ruido en los datos.
+
+En conjunto, los resultados validan tanto la implementación matemática como el comportamiento esperado del modelo: cuando se cumplen los supuestos de linealidad y los datos siguen un patrón bien definido, la regresión lineal es capaz de ofrecer un ajuste preciso y estable.
 
 ---
 
@@ -137,7 +143,13 @@ Los resultados obtenidos muestran que el modelo es capaz de aproximar correctame
 ---
 En este ejercicio se analiza una serie temporal sintética de 6 años de datos diarios (2018–2023), generada a partir de un modelo aditivo que combina tendencia, estacionalidad, ciclos de largo plazo y ruido gaussiano.
 
-Se ha realizado la descomposición de la serie y el análisis del residuo con el objetivo de identificar sus componentes y evaluar si el ruido se comporta como ruido blanco ideal.
+Se ha realizado la descomposición de la serie con el objetivo de separar sus componentes y estudiar el comportamiento del residuo. El análisis revela la presencia de una tendencia creciente aproximadamente lineal, una estacionalidad clara de periodo anual y ciclos de baja frecuencia que introducen variaciones suaves a largo plazo.
+
+El estudio del residuo muestra que este se aproxima a un ruido blanco ideal. La media es cercana a cero (0.1271), la desviación típica es moderada y tanto la asimetría como la curtosis son próximas a cero, lo que indica ausencia de sesgo y colas pronunciadas. Además, el test de normalidad de Jarque-Bera arroja un p-valor de 0.5766, por lo que no se rechaza la hipótesis de normalidad. Por otro lado, el test ADF confirma la estacionariedad del residuo (p-valor ≈ 0).
+
+Estos resultados indican que la descomposición ha capturado adecuadamente toda la estructura sistemática de la serie, dejando en el residuo únicamente variabilidad aleatoria sin patrones identificables.
+
+En conclusión, el modelo aditivo utilizado describe correctamente la dinámica de la serie temporal, y el comportamiento del residuo valida que no quedan componentes estructurales sin modelar, cumpliéndose las condiciones esperadas de un buen ajuste en análisis de series temporales.
 
 ---
 

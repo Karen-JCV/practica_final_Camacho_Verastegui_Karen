@@ -7,7 +7,6 @@ import os
 # Crear carpeta de salida si no existe
 os.makedirs("output", exist_ok=True)
 
-
 # =============================================================================
 # GENERACIÓN DE LA SERIE TEMPORAL SINTÉTICA
 # =============================================================================
@@ -56,7 +55,6 @@ def generar_serie_temporal(semilla=42):
 
     serie = pd.Series(valores, index=fechas, name="valor")
     return serie
-
 
 # =============================================================================
 #  Visualizar la serie completa

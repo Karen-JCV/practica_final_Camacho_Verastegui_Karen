@@ -72,6 +72,12 @@ Comprender la estructura y calidad de los datos.
 
 El comportamiento del uso del smartphone es **complejo y no lineal**, lo que anticipa dificultades para modelos simples.
 
+### Visualizaciones
+![Histogramas](output/ej1_histogramas.png)
+![Boxplots](output/ej1_boxplots.png)
+![Categoricas](output/ej1_categoricas.png)
+![Heatmap](output/ej1_heatmap_correlacion.png)
+
 ---
 
 # 🤖 Ejercicio 2 — Regresión Lineal (Scikit-Learn)
@@ -109,6 +115,9 @@ Estos resultados confirman el Ejercicio 1:
 
 La regresión lineal **no es adecuada** para este problema.
 
+### Visualizaciones
+![Residuos](output/ej2_residuos.png)
+
 ---
 
 # 🧠 Ejercicio 3 — Regresión Lineal desde cero (NumPy)
@@ -140,6 +149,9 @@ Implementar OLS manualmente para comprender la base matemática:
 ### ✅ Conclusión
 
 La implementación es correcta y consistente con la teoría.
+
+### Visualizaciones
+![Real vs Predicho](output/ej3_predicciones.png)
 
 ---
 
@@ -203,6 +215,12 @@ Serie = Tendencia + Estacionalidad + Residuo
 La descomposición captura correctamente toda la estructura de la serie.
 
 El residuo cumple propiedades de **ruido blanco**, lo que valida el modelo aditivo.
+
+### Visualizaciones
+![Serie original](output/ej4_serie_original.png)
+![Descomposición](output/ej4_descomposicion.png)
+![ACF PACF](output/ej4_acf_pacf.png)
+![Histograma ruido](output/ej4_histograma_ruido.png)
 
 ---
 
