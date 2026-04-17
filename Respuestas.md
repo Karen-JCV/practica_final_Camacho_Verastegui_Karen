@@ -4,7 +4,7 @@
 ## Ejercicio 1 — Análisis Estadístico Descriptivo
 
 ---
-El dataset analizado contiene información sobre el uso del smartphone y posibles indicadores de adicción en un total de 7500 usuarios. Incluye variables numéricas relacionadas con el tiempo de uso, número de notificaciones y aperturas de aplicaciones, así como variables categóricas como género, nivel de estrés o impacto académico.
+El dataset analizado contiene información sobre el uso del smartphone y posibles indicadores de adicción en un total de 7500 usuarios. Incluye variables numéricas relacionadas con el tiempo de uso, número de notificaciones y aperturas de aplicaciones, así como variables categóricas como género, nivel de estrés o impacto académico. 
 
 Tras la exploración inicial, se comprobó que los datos están limpios, sin duplicados y con valores nulos únicamente en la variable `addiction_level` (10.92%), los cuales fueron imputados como `"unknown"` para preservar la información y no alterar resultados con la moda.
 
