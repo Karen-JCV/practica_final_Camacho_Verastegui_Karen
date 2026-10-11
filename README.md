@@ -1,4 +1,4 @@
-# 📊 Smartphone Usage & Addiction Analysis
+# Smartphone Usage & Addiction Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-yellow)
@@ -7,7 +7,7 @@
 
 ---
 
-## 📌 Descripción del proyecto
+## Descripción del proyecto
 
 Este proyecto tiene como objetivo realizar un análisis completo del comportamiento de uso del smartphone y su relación con posibles indicadores de adicción digital.
 
@@ -21,7 +21,7 @@ El trabajo se estructura en 4 ejercicios que cubren todo el pipeline de análisi
 
 ---
 
-## 📂 Dataset
+## Dataset
 
 El dataset contiene información de **7500 usuarios** e incluye variables relacionadas con:
 
@@ -31,7 +31,7 @@ El dataset contiene información de **7500 usuarios** e incluye variables relaci
 - Nivel de estrés e impacto académico
 - Indicadores de adicción
 
-### 🔗 Fuente
+### Fuente
 
 Dataset obtenido de Kaggle:
 
@@ -39,7 +39,7 @@ https://www.kaggle.com/datasets/zahranusratt/smartphone-usage-and-addiction-anal
 
 Los datos han sido utilizados únicamente con fines educativos.
 
-### 🎯 Variable objetivo
+### Variable objetivo
 
 app_opens_per_day
 
@@ -47,12 +47,12 @@ Variable numérica continua que representa el número de aperturas de aplicacion
 
 ---
 
-# 🧪 Ejercicio 1 — Análisis Estadístico Descriptivo
+# Ejercicio 1 — Análisis Estadístico Descriptivo
 
-### 🔍 Objetivo
+### Objetivo
 Comprender la estructura y calidad de los datos.
 
-### 📊 Resultados clave
+### Resultados clave
 
 - Dataset limpio, sin duplicados
 - Valores nulos únicamente en `addiction_level` (**10.92%**), tratados como `"unknown"`
@@ -60,7 +60,7 @@ Comprender la estructura y calidad de los datos.
 - No se detectan outliers en la variable objetivo (método IQR)
 - Variables categóricas equilibradas
 
-### ❗ Hallazgos importantes
+### Hallazgos importantes
 
 - No existen correlaciones lineales significativas con la variable objetivo  
   (|r| < 0.03)
@@ -68,7 +68,7 @@ Comprender la estructura y calidad de los datos.
   - `daily_screen_time_hours`
   - `weekend_screen_time`
 
-### 🧠 Conclusión
+### Conclusión
 
 El comportamiento del uso del smartphone es **complejo y no lineal**, lo que anticipa dificultades para modelos simples.
 
@@ -80,16 +80,16 @@ El comportamiento del uso del smartphone es **complejo y no lineal**, lo que ant
 
 ---
 
-# 🤖 Ejercicio 2 — Regresión Lineal (Scikit-Learn)
+# Ejercicio 2 — Regresión Lineal (Scikit-Learn)
 
-### ⚙️ Preprocesamiento
+### Preprocesamiento
 
 - Eliminación de IDs
 - One-Hot Encoding
 - Escalado con `StandardScaler`
 - Split 80/20
 
-### 📊 Resultados
+### Resultados
 
 | Métrica | Valor |
 |--------|------|
@@ -97,21 +97,21 @@ El comportamiento del uso del smartphone es **complejo y no lineal**, lo que ant
 | RMSE   | 48.68 |
 | R²     | -0.000804 |
 
-### 📉 Interpretación
+### Interpretación
 
 - Error medio ≈ **42 aperturas/día** (~43% de la media)
 - R² negativo → peor que predecir la media
 - Errores elevados y dispersión alta
 
-👉 El modelo presenta **underfitting severo**
+El modelo presenta **underfitting severo**
 
-### 🔍 Conexión con EDA
+### Conexión con EDA
 
 Estos resultados confirman el Ejercicio 1:
 - Ausencia de relaciones lineales
 - Variables poco predictivas individualmente
 
-### ⚠️ Conclusión
+### Conclusión
 
 La regresión lineal **no es adecuada** para este problema.
 
@@ -120,16 +120,16 @@ La regresión lineal **no es adecuada** para este problema.
 
 ---
 
-# 🧠 Ejercicio 3 — Regresión Lineal desde cero (NumPy)
+# Ejercicio 3 — Regresión Lineal desde cero (NumPy)
 
-### 🎯 Objetivo
+### Objetivo
 Implementar OLS manualmente para comprender la base matemática:
 
 \[
 \beta = (X^T X)^{-1} X^T y
 \]
 
-### 📊 Resultados
+### Resultados
 
 **Coeficientes:**
 - Reales: [5.0, 2.0, -1.0, 0.5]  
@@ -140,13 +140,13 @@ Implementar OLS manualmente para comprender la base matemática:
 - RMSE = 1.4612  
 - R²   = 0.6897  
 
-### 📈 Interpretación
+### Interpretación
 
 - El modelo recupera correctamente los coeficientes
 - R² ≈ 0.69 → explica ~69% de la variabilidad
 - Diferencias debidas al ruido gaussiano
 
-### ✅ Conclusión
+### Conclusión
 
 La implementación es correcta y consistente con la teoría.
 
@@ -155,9 +155,9 @@ La implementación es correcta y consistente con la teoría.
 
 ---
 
-# 📈 Ejercicio 4 — Análisis de Series Temporales
+# Ejercicio 4 — Análisis de Series Temporales
 
-### 🔍 Descripción
+### Descripción
 
 Serie sintética (2018–2023) con:
 - Tendencia lineal creciente
@@ -167,7 +167,7 @@ Serie sintética (2018–2023) con:
 
 ---
 
-## ⚙️ Metodología
+## Metodología
 
 ### 1. Visualización
 Identificación de patrones globales
@@ -190,7 +190,7 @@ Serie = Tendencia + Estacionalidad + Residuo
 
 ---
 
-## 📊 Resultados
+## Resultados
 
 ### ✔ Tendencia
 - Lineal y creciente (≈ 50 → 150)
@@ -210,7 +210,7 @@ Serie = Tendencia + Estacionalidad + Residuo
 
 ---
 
-## 🧠 Conclusión
+## Conclusión
 
 La descomposición captura correctamente toda la estructura de la serie.
 
@@ -224,7 +224,7 @@ El residuo cumple propiedades de **ruido blanco**, lo que valida el modelo aditi
 
 ---
 
-# 📁 Estructura del proyecto
+# Estructura del proyecto
 ```
 .
 ├── data
@@ -257,7 +257,7 @@ El residuo cumple propiedades de **ruido blanco**, lo que valida el modelo aditi
 
 ---
 
-# 🛠️ Tecnologías
+# Tecnologías
 
 - Python
 - Pandas & NumPy
@@ -268,13 +268,13 @@ El residuo cumple propiedades de **ruido blanco**, lo que valida el modelo aditi
 
 ---
 
-# ⭐ Key Takeaway
+# Key Takeaway
 
 > No todos los problemas pueden resolverse con modelos lineales.  
 > Entender los datos es más importante que aplicar algoritmos complejos sin análisis previo.
 
 ---
 
-# 👨‍💻 Autor
+# Autor
 
 Proyecto desarrollado como práctica final de análisis y modelado de datos.
